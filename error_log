@@ -1,0 +1,4 @@
+[04-Sep-2012 07:48:24] PHP Warning:  file_get_contents(http://www.nfl.com/scores/2012/PRE1) [<a href='function.file-get-contents'>function.file-get-contents</a>]: failed to open stream: HTTP request failed!  in /home2/smdtest1/public_html/28club/simple_html_dom.php on line 70
+[04-Sep-2012 07:48:24] PHP Fatal error:  Call to a member function find() on a non-object in /home2/smdtest1/public_html/28club/index.php on line 18
+[05-Sep-2012 07:33:33] PHP Warning:  file_get_contents(http://www.nfl.com/scores/2012/REG2) [<a href='function.file-get-contents'>function.file-get-contents</a>]: failed to open stream: HTTP request failed!  in /home2/smdtest1/public_html/28club/simple_html_dom.php on line 70
+[05-Sep-2012 07:33:33] PHP Fatal error:  Call to a member function find() on a non-object in /home2/smdtest1/public_html/28club/index.php on line 18

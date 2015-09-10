@@ -6,10 +6,10 @@ if (!$con) {
 
 mysql_select_db("smdtest1_28_club", $con);
 
-mysql_query('delete from smdtest1_28_club.player_team_year');
+//mysql_query('delete from smdtest1_28_club.player_team_year');
 
 for ($i=1; $i < 32; $i++) { 
-	mysql_query('insert into player_team_year (player_id, team_id, year) values ('.$i.', '.$_GET["team_".$i].',\'2012\')');
+	mysql_query('insert into player_team_year (player_id, team_id, year) values ('.$i.', '.$_GET["team_".$i].',\'2014\')');
 }
 
 mysql_close($con);

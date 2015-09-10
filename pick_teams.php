@@ -30,7 +30,7 @@ $result = mysql_query($playerSql);
 ?>	
 
 
-<h1>2012 28 Club</h1>
+<h1>2014 28 Club</h1>
 <p class="lead">Trevor Winter's 28 Club</p>
 <form action="save_pick_teams.php">
 <table class="table">
