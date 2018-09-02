@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <?php
-$con = mysql_connect("localhost","smdtest1_teclub","asdfasdf88");
+$con = ($GLOBALS["___mysqli_ston"] = mysqli_connect("localhost", "smdtest1_teclub", "asdfasdf88"));
 if (!$con) {
-  die('Could not connect: ' . mysql_error());
+  die('Could not connect: ' . mysqli_error($GLOBALS["___mysqli_ston"]));
   }
 
-mysql_select_db("smdtest1_28_club", $con);
+mysqli_select_db( $con, smdtest1_28_club);
 $teamSql = "select * from team";
 $playerSql = "select * from player";
 ?>
@@ -13,7 +13,7 @@ $playerSql = "select * from player";
 <html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>2012 28 Club</title>
+	<title>2018 28 Club</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="author" content="Matt Christianson">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -26,24 +26,25 @@ th, td {
 <body style="margin:20px;">
 <?php
 // print_r($scoreArray);
-$result = mysql_query($playerSql);
-?>	
+$result = mysqli_query($GLOBALS["___mysqli_ston"], $playerSql);
+?>
 
 
-<h1>2014 28 Club</h1>
+<h1>2018 28 Club</h1>
 <p class="lead">Trevor Winter's 28 Club</p>
 <form action="save_pick_teams.php">
 <table class="table">
-<?php while($row = mysql_fetch_array($result)) { ?>	
+<?php while($row = mysqli_fetch_array($result)) { ?>
 
 	<tr>
 		<td><?=$row['first_name']. ' ' . $row['last_name']?></td>
 		<td>
 			<select name="team_<?=$row['id']?>">
-				<?php 
-				$result2 = mysql_query($teamSql);
-				while($innerRow = mysql_fetch_array($result2)) { ?>	
-					<option value="<?=$innerRow['id']?>"><?=$innerRow['nickname']?></option>
+        <option value="">none</option>
+				<?php
+				$result2 = mysqli_query($GLOBALS["___mysqli_ston"], $teamSql);
+				while($innerRow = mysqli_fetch_array($result2)) { ?>
+          <option value="<?=$innerRow['id']?>"><?=$innerRow['nickname']?></option>
 				<?php } ?>
 
 			</select>
